@@ -1,4 +1,3 @@
-const Movie = require('../domain/movie');
 const Request = require('../utils/request');
 const Response = require('../utils/response');
 
