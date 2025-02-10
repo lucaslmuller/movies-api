@@ -1,0 +1,716 @@
+{
+	"info": {
+		"_postman_id": "c48f1be0-9d41-4483-b23d-75dc9678ecf8",
+		"name": "Movies API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "587758"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Cruising\",\n    \"year\": 1980,\n    \"producers\": \"Jerry Weintraub\",\n    \"studios\": \"Lorimar Productions, United Artists\",\n    \"winner\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/movies",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Cruising\",\n    \"year\": 1980,\n    \"producers\": \"Jerry Weintraub\",\n    \"studios\": \"Lorimar Productions, United Artists\",\n    \"winner\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/movies",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "23b89246-acf3-4803-b14a-7261f7937358"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:42:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Cruising\",\n        \"year\": 1980,\n        \"producers\": \"Jerry Weintraub\",\n        \"studios\": \"Lorimar Productions, United Artists\",\n        \"winner\": true\n    }\n}"
+						},
+						{
+							"name": "Missing Fields",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/movies",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Feb 2025 18:04:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": {\n        \"code\": 400,\n        \"message\": \"Missing fields: title, year, producers, studios, winner\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Cruising\",\n    \"year\": 1980,\n    \"producers\": \"Jerry Weintraub\",\n    \"studios\": \"Lorimar Productions, United Artists\",\n    \"winner\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"movies",
+								"{{MOVIE_ID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Cruising\",\n    \"year\": 1980,\n    \"producers\": \"Jerry Weintraub\",\n    \"studios\": \"Lorimar Productions, United Artists\",\n    \"winner\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"{{MOVIE_ID}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f4164e17-60a6-41cf-81c1-27ec350eb7c8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:47:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Cruising\",\n        \"year\": 1980,\n        \"producers\": \"Jerry Weintraub\",\n        \"studios\": \"Lorimar Productions, United Artists\",\n        \"winner\": true\n    }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated\",\n    \"brand\": \"Updated\",\n    \"state\": \"available\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"{{MOVIE_ID}}"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7dffe125-cb5f-4c88-9e77-9434773c4250"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:57:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": \"Movie not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"movies",
+								"{{MOVIE_ID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"{{MOVIE_ID}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f4e6ccb1-b54d-4393-ab69-9c0588762450"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:52:17 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": true\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"{{MOVIE_ID}}"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "5f4c0413-754e-4436-bc71-ed5aba965709"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:55:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": \"Movie not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/movies?page=1&per_page=10",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER}}/movies?page=1&per_page=10",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "3f45835d-e5e2-44f2-aa54-6df28243304f"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:58:09 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Can't Stop the Music\",\n            \"year\": 1980,\n            \"producers\": \"Allan Carr\",\n            \"studios\": \"Associated Film Distribution\",\n            \"winner\": false\n        },\n        {\n            \"id\": 2,\n            \"title\": \"The Formula\",\n            \"year\": 1980,\n            \"producers\": \"Steve Shagan\",\n            \"studios\": \"MGM, United Artists\",\n            \"winner\": false\n        },\n        {\n            \"id\": 3,\n            \"title\": \"The Nude Bomb\",\n            \"year\": 1980,\n            \"producers\": \"Jennings Lang\",\n            \"studios\": \"Universal Studios\",\n            \"winner\": false\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Cruising\",\n            \"year\": 1980,\n            \"producers\": \"Jerry Weintraub\",\n            \"studios\": \"Lorimar Productions, United Artists\",\n            \"winner\": false\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Raise the Titanic\",\n            \"year\": 1980,\n            \"producers\": \"William Frye\",\n            \"studios\": \"Associated Film Distribution\",\n            \"winner\": false\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Saturn 3\",\n            \"year\": 1980,\n            \"producers\": \"Stanley Donen\",\n            \"studios\": \"Associated Film Distribution\",\n            \"winner\": false\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Windows\",\n            \"year\": 1980,\n            \"producers\": \"Mike Lobell\",\n            \"studios\": \"United Artists\",\n            \"winner\": false\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Xanadu\",\n            \"year\": 1980,\n            \"producers\": \"Lawrence Gordon\",\n            \"studios\": \"Universal Studios\",\n            \"winner\": false\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Mommie Dearest\",\n            \"year\": 1981,\n            \"producers\": \"Frank Yablans\",\n            \"studios\": \"Paramount Pictures\",\n            \"winner\": false\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Friday the 13th\",\n            \"year\": 1980,\n            \"producers\": \"Sean S. Cunningham\",\n            \"studios\": \"Paramount Pictures\",\n            \"winner\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"movies",
+								"{{MOVIE_ID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"{{MOVIE_ID}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "497126d1-7281-4186-b0ad-0be0bed0082b"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:57:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": \"Movie not found\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER}}/movies/{{MOVIE_ID}}",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"{{MOVIE_ID}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d6342608-9096-4589-a89b-02f435af31ec"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:58:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Cruising\",\n        \"year\": 1980,\n        \"producers\": \"Jerry Weintraub\",\n        \"studios\": \"Lorimar Productions, United Artists\",\n        \"winner\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Stats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/movies/stats",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"movies",
+								"stats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER}}/movies/stats",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"movies",
+										"stats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "4eec5b3f-3f6e-4d05-ae98-7c48ce585066"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 21:59:29 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"min\": [\n        {\n            \"producer\": \"Joel Silver\",\n            \"interval\": 1,\n            \"previousWin\": 1990,\n            \"followingWin\": 1991\n        }\n    ],\n    \"max\": [\n        {\n            \"producer\": \"Matthew Vaughn\",\n            \"interval\": 13,\n            \"previousWin\": 2002,\n            \"followingWin\": 2015\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/health-check",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "healthy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/health-check",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"health-check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 01 Feb 2025 21:41:37 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": \"OK\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SERVER",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "MOVIE_ID",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
