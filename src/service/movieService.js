@@ -63,8 +63,8 @@ module.exports = class MovieService {
     });
 
     return {
-      min: producersByMin[producersMinInterval],
-      max: producersByMax[producersMaxInterval],
+      min: producersByMin[producersMinInterval] || [],
+      max: producersByMax[producersMaxInterval] || [],
     };
   }
 
